@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a=10;
+        var b=20;
+        var c=30;
+        var d=40;
+        //second highest number
+        if(a>b && a>c && a>d){
+            if(b>c && b>d){
+                document.write("second highest number is "+b);
+            }
+            else if(c>b && c>d){
+                document.write("second highest number is "+c);
+            }
+            else{
+                document.write("second highest number is "+d);
+            }
+        }
+        else if(b>a && b>c && b>d){
+            if(a>c && a>d){
+                document.write("second highest number is "+a);
+            }
+            else if(c>a && c>d){
+                document.write("second highest number is "+c);
+            }
+            else{
+                document.write("second highest number is "+d);
+            }
+        }
+        else if(c>a && c>b && c>d){
+            if(a>b && a>d){
+                document.write("second highest number is "+a);
+            }
+            else if(b>a && b>d){
+                document.write("second highest number is "+b);
+            }
+            else{
+                document.write("second highest number is "+d);
+            }
+        }
+        else{
+            if(a>b && a>c){
+                document.write("second highest number is "+a);
+            }
+            else if(b>a && b>c){
+                document.write("second highest number is "+b);
+            }
+            else{
+                document.write("second highest number is "+c);
+            }
+        }
+        
+    </script>
+</body>
+</html>
