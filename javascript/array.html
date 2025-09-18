@@ -6,15 +6,60 @@
     <title>Document</title>
 </head>
 <body>
-    <p id="adi"></p>
-    <script>
-        var car=["car1","car2","car3","car4"];
-        document.getElementById("adi").innerHTML=car;
-        car[2]="BMW";
-        document.getElementById("adi").innerHTML=car[0];
+    <style>
+        .card1,.card2{
+            border: 2px solid black;
+            height: 300px;
+            width: 400px;
+            margin: 20px;
+            float: left;
+            padding: 10px;
+        }
+        .card1{
+            background: lightgreen;
+        }
+        .card2{
+            background: lightcoral;
+        }
+    </style>
 
-        var car_ind=new Array("car5","car6","car7","car8");
-        document.getElementById("adi").innerHTML=car_ind;
+    <!-- create two card and fetch data by json and display the data in card 1 where data match and card2 where data do not match -->
+    <div class="card1">
+        <h3>Matched Data</h3>
+        <p id="match"></p>
+    </div>
+    <div class="card2">
+        <h3>Unmatched Data</h3>
+        <p id="unmatch"></p>
+    </div>
+    <script>
+        const data1=
+            {name:"Aman",age:21,class:"IT"};
+        const data2=
+            {name:"Rahul",age:21,class:"CSE"};
+        const data3=
+            {name:"Prince",age:21,class:"IT"};
+        const data4=
+            {name:"Adarsh",age:21,class:"IT"};
+        const data5=
+            {name:"Ujjawal",age:21,class:"Civil"};
+        //split data in matched in card1  and unmatched in card2 by cheching the classs data have class it grouped in match data and other in unmatch data
+        var arr=[data1,data2,data3,data4,data5];
+        var match="";
+        var unmatch="";
+        for(var i=0;i<arr.length;i++){
+            if(arr[i].class=="IT"){
+                match+=arr[i].name+" "+arr[i].age+" "+arr[i].class+"<br>";
+            }
+            else{
+                unmatch+=arr[i].name+" "+arr[i].age+" "+arr[i].class+ "<br>";
+            }
+        }
+
+        document.getElementById("match").innerHTML=match;
+        document.getElementById("unmatch").innerHTML=unmatch;
     </script>
-</body>
+        
+
+</body> 
 </html>
