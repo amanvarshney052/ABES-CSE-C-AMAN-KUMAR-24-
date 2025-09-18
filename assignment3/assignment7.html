@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Cards</title>
+    <style>
+        #adi{
+            border: 2px solid black;
+            height:800px;
+            width: 1400px;
+            background-color: aquamarine;
+            margin: 0 auto;
+        }
+        #logo{
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            margin: 10px;
+            background-color: rgb(235, 107, 107);
+        }
+        .card{
+            border: 2px solid black;
+            height: 350px;
+            width: 400px;
+            margin: 20px;
+            float: left;
+            padding: 10px;
+            background-color: rgb(60, 106, 192);
+            color: #fff;
+            position: relative;
+            box-sizing: border-box;
+        }
+        .card img{
+            height: 150px;
+            width: 150px;
+            margin-left: 0;
+            margin-top: 10px;
+            border-radius: 10px;
+            display: block;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        .card-details {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+        .card button {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 8px 18px;
+            background: #ffeb3b;
+            color: #333;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .card button:hover {
+            background: #ffd600;
+        }
+    </style>
+</head>
+<body>
+    <div id="logo"></div>
+    <div id="adi">
+        <div class="card" id="card1"></div>
+        <div class="card" id="card2"></div>
+        <div class="card" id="card3"></div>
+    </div>
+    <script>
+        const products = [
+            {
+                name: "Nothing Phone",
+                model: "3a",
+                price: 25000,
+                img: "https://m.media-amazon.com/images/I/51izGKpbXOL._UF1000,1000_QL80_.jpg",
+                category: "phone"
+            },
+            {
+                name: "Sony TV",
+                model: "HD Ready",
+                price: 45000,
+                img: "https://sharptronics.in/cdn/shop/products/71Q24PwtvaL._SL1500__1_4704d6f9-1fd0-4ca6-a477-1367734b2417.jpg?v=1664524463",
+                category: "tv"
+            },
+            {
+                name: "Volvo Bus",
+                model: "B11R",
+                price: 8000000,
+                img: "https://buscdn.cardekho.com/in/volvo/9400-b11r/volvo-9400-b11r.jpg?impolicy=resize&imwidth=480",
+                category: "bus"
+            }
+        ];
+
+        function createCard(cardId, product) {
+            document.getElementById(cardId).innerHTML = `
+                <img src="${product.img}" alt="${product.name}">
+                <div class="card-details">
+                    <strong>Name:</strong> ${product.name}<br>
+                    <strong>Model:</strong> ${product.model}<br>
+                    <strong>Price:</strong> ₹${product.price}
+                </div>
+                <button onclick="viewMore('${product.category}')">View More</button>
+            `;
+        }
+
+        createCard("card1", products[0]);
+        createCard("card2", products[1]);
+        createCard("card3", products[2]);
+
+        function viewMore(category) {
+            // Open a new page with products of the same category
+            window.open(`products.html?category=${category}`, "_blank");
+        }
+    </script>
+</body>
+</html>

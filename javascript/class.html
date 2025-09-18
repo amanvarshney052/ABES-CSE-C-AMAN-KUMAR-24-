@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="adi"></p>
+    <script>
+        class car{
+            constructor(name,year ){
+                this.name=name;
+                this.year=year;
+            }
+        }
+        const mycar1=new car("Ford",2020);
+        const mycar2=new car("Audi",2019);
+        document.getElementById("adi").innerHTML=mycar1.name+" "+mycar1.year+"<br>"+mycar2.name+" "+mycar2.year;
+    </script>
+</body>
+</html>
