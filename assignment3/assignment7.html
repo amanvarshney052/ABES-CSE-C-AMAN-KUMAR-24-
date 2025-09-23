@@ -4,19 +4,34 @@
     <meta charset="UTF-8">
     <title>Product Cards</title>
     <style>
-        #adi{
-            border: 2px solid black;
-            height:800px;
-            width: 1400px;
-            background-color: aquamarine;
-            margin: 0 auto;
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            width: 100%;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            padding: 10px 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            margin-bottom: 20px;
         }
         #logo{
             height: 60px;
             width: 60px;
             border-radius: 50%;
-            margin: 10px;
-            background-color: rgb(235, 107, 107);
+            
+            margin-right: 18px;
+            margin: 0;
+        }
+        .company-name {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #3c6ac0;
+            letter-spacing: 2px;
         }
         .card{
             border: 2px solid black;
@@ -63,12 +78,15 @@
     </style>
 </head>
 <body>
-    <div id="logo"></div>
-    <div id="adi">
+    <div class="navbar">
+        <img id="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3UGYErRk4mXdJ0kwX71AfRkLIy9sY8Ndkkw&s" alt="Logo">
+        <span class="company-name">IndiaMall</span>
+    </div>
+    
         <div class="card" id="card1"></div>
         <div class="card" id="card2"></div>
         <div class="card" id="card3"></div>
-    </div>
+    
     <script>
         const products = [
             {
@@ -111,8 +129,13 @@
         createCard("card3", products[2]);
 
         function viewMore(category) {
-            // Open a new page with products of the same category
-            window.open(`products.html?category=${category}`, "_blank");
+            if (category === "phone") {
+                window.open("../products-phone.html", "_blank");
+            } else if (category === "tv") {
+                window.open("../products-tv.html", "_blank");
+            } else if (category === "bus") {
+                window.open("../products-bus.html", "_blank");
+            }
         }
     </script>
 </body>
