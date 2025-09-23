@@ -6,19 +6,14 @@
     <title>Document</title>
 </head>
 <body>
+    <p id="demo"></p>
     <script>
-        {
-            var a=12;
-            var a=13;
-            document.write(a+"<br>");
-            let x=14;//fix value
-            document.write(x);
-            const pi=3.14;//constant value
-            document.write("<br>"+pi);
-
-
+        
+        let hello=()=>{
+            return "Hello World";
 
         }
+        document.getElementById("demo").innerHTML=hello();
     </script>
 </body>
 </html>
