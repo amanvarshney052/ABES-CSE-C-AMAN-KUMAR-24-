@@ -6,11 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    <p id="demo"></p>
     <script>
-        
-        let hello=()=>"aman varshney";
-        document.getElementById("demo").innerHTML=hello();
+        function multiply(a,b=1){
+            return a*b;
+        }
+        document.write(multiply(5));
     </script>
 </body>
 </html>
