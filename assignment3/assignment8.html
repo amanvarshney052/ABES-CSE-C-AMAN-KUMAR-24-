@@ -6,15 +6,23 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="text" id="name" placeholder="Enter your name">
-    <button onclick="abes()">CLICK</button>
-    <p id="abes"></p>   
+    
+    <div class="main">
+       <div class="pic"><img src="" alt=""></div>
+       <div class="detail">
+        <h3>name:</h3>
+        <input type="text">
+        <button>CLICK</button>
+        <h3>btech</h3>
+       </div>
+    </div>
+    <div class="lang">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+    </div>
     <script>
-        function abes(){
-            let inputfield=document.getElementById("name");
-            let value=inputfield.value;
-            document.getElementById("abes").innerHTML=`Hello ${value}, welcome to ABES Engineering College!`;
-        }
+
     </script>
 </body>
 </html>
