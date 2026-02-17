@@ -14,4 +14,4 @@ function someAsyncOperation(){
     }); 
 }
 
-getData();
+getData(); 
